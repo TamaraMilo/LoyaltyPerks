@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainManagerFragment"
+    >
+
+    <fragment
+        android:id="@+id/MainManagerFragment"
+        android:name="dipl.project.loyaltyperks.ui.mainManager.MainManagerFragment"
+        tools:layout="@layout/fragment_main_manager"
+        >
+
+        <action
+            android:id="@+id/action_MainManagerFragment_to_AddCustomerFragment"
+            app:destination="@id/AddCustomerFragment"
+            />
+        <action
+            android:id="@+id/action_MainManagerFragment_to_ScanCustomerFragment"
+            app:destination="@id/ScanCustomerFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/AddCustomerFragment"
+        android:name="dipl.project.loyaltyperks.ui.mainManager.AddCustomerFragment"
+        tools:layout="@layout/fragment_add_customer"
+        >
+        <action
+            android:id="@+id/action_AddCustomerFragment_to_MainManagerFragment"
+            app:destination="@id/MainManagerFragment"
+            />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ScanCustomerFragment"
+        android:name="dipl.project.loyaltyperks.ui.mainManager.ScanCustomerFragment"
+        tools:layout="@layout/fragment_scan_customer"
+        >
+        <action
+            android:id="@+id/action_ScanCustomerFragment_to_MainManagerFragment"
+            app:destination="@id/MainManagerFragment"
+            />
+    </fragment>
+
+</navigation>

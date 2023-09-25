@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainUser.ScannedCardFragment">
+
+    <TextView
+        android:id="@+id/tvProgramName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_34sdp"
+        android:fontFamily="@font/poppins"
+        android:text="Profram name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_34sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivProgramImage"
+        android:layout_width="@dimen/_148sdp"
+        android:layout_height="@dimen/_148sdp"
+        android:layout_marginTop="@dimen/_34sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProgramName" />
+
+
+    <LinearLayout
+        android:id="@+id/linPoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_43sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ivProgramImage"
+        >
+
+        <TextView
+            android:id="@+id/tvPoints"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/points"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_24sdp"
+
+            />
+        <TextView
+            android:id="@+id/tvNumOfPoints"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            />
+
+    </LinearLayout>
+
+
+    <android.widget.Button
+        android:id="@+id/bAddCard"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_width="@dimen/_132sdp"
+        android:background="@color/wallet_holo_blue_light"
+        android:textColor="@color/black"
+        android:text="@string/add"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linPoints"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

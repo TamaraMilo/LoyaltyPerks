@@ -1,0 +1,27 @@
+{
+  "id": "ISSUER_ID.LOYALTY_CLASS_ID",
+  "localizedIssuerName": {
+    "defaultValue": {
+      "language": "en-US",
+      "value": "[TEST ONLY] test"
+    }
+  },
+  "localizedProgramName": {
+    "defaultValue": {
+      "language": "en-US",
+      "value": "PROGRAM_NAME"
+    }
+  },
+  "hexBackgroundColor": "CARD_COLOR",
+  "heroImage": {
+    "sourceUri": {
+      "uri": "IMAGE_URL"
+    },
+    "contentDescription": {
+      "defaultValue": {
+        "language": "en-US",
+        "value": "HERO_IMAGE_DESCRIPTION"
+      }
+    }
+  }
+}

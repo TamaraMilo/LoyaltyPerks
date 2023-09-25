@@ -1,0 +1,59 @@
+{
+  "iss": "loyalty-perks@loyaltyperks.iam.gserviceaccount.com",
+  "typ": "savetowallet",
+  "iat": "1389816895",
+  "origins": [],
+  "payload": {
+    "loyaltyClass": [
+      {
+        "id": "3388000000022260768.test-loyalty-card",
+        "localizedIssuerName": {
+          "defaultValue": {
+            "language": "en-US",
+            "value": "[TEST ONLY] test"
+          }
+        },
+        "localizedProgramName": {
+          "defaultValue": {
+            "language": "en-US",
+            "value": "test-loyalty-card"
+          }
+        },
+        "hexBackgroundColor": "#800080",
+        "heroImage": {
+          "sourceUri": {
+            "uri": "https://firebasestorage.googleapis.com/v0/b/loyaltyperks-3d820.appspot.com/o/images%2FScreenshot%202023-06-24%20192248.png?alt=media&token=83141aa5-46c8-4c48-bf22-26400b0c4738"
+          },
+          "contentDescription": {
+            "defaultValue": {
+              "language": "en-US",
+              "value": "desc"
+            }
+          }
+        }
+      }
+    ],
+    "loyaltyObjects": [
+      {
+        "id": "3388000000022260768.probaID",
+        "classId": "3388000000022260768.test-loyalty-card",
+        "loyaltyPoints": {
+          "balance": {
+            "int": "100"
+          },
+          "localizedLabel": {
+            "defaultValue": {
+              "language": "en-US",
+              "value": "Points"
+            }
+          }
+        },
+        "barcode": {
+          "type": "QR_CODE",
+          "value": "nestp",
+          "alternateText": ""
+        }
+      }
+    ]
+  }
+}

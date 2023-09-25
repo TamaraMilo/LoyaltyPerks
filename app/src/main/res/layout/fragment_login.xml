@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.auth.LoginFragment">
+
+
+    <TextView
+        android:id="@+id/tvSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_32sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSignIn"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_132sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:src="@drawable/signin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
+
+    <EditText
+        android:id="@+id/etEmailSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginRight="@dimen/_32sdp"
+        android:background="@drawable/text_view_background"
+        android:drawableStart="@drawable/mail_24px"
+        android:drawablePadding="4dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/darker_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivSignIn" />
+
+    <EditText
+        android:id="@+id/etPasswordSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginRight="@dimen/_32sdp"
+        android:background="@drawable/text_view_background"
+        android:drawableStart="@drawable/lock_24px"
+        android:drawablePadding="4dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColor="@color/darker_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEmailSignIn" />
+
+    <android.widget.Button
+        android:id="@+id/bSignIn"
+        android:layout_width="@dimen/_132sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:background="@drawable/button_background"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPasswordSignIn" />
+
+    <LinearLayout
+        android:id="@+id/linButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bSignIn"
+        >
+        <ImageView
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:src="@drawable/googleimage"
+            />
+        <android.widget.Button
+            android:id="@+id/bGoogleSignIn"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_width="wrap_content"
+            android:text="@string/sign_in_with_google"
+            android:fontFamily="@font/poppins"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_16sdp"
+
+            />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:clickable="true"
+        android:text="@string/create_account"
+        android:textColor="@color/darker_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

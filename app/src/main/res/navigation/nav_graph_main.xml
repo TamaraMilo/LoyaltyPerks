@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@layout/fragment_main">
+
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="dipl.project.loyaltyperks.ui.mainUser.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_main">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="dipl.project.loyaltyperks.ui.mainUser.ProfileFragment"
+        android:label="Profile Fragment"
+        tools:layout="@layout/fragment_profile">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyCardsFragment"
+        android:name="dipl.project.loyaltyperks.ui.mainUser.MyCardsFragment"
+        android:label="My cards Fragment"
+        tools:layout="@layout/fragment_my_cards">
+
+    </fragment>
+
+</navigation>

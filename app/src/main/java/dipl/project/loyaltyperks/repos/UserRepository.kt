@@ -3,6 +3,7 @@ package dipl.project.loyaltyperks.repos
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.getValue
+import dipl.project.loyaltyperks.data.CardData
 import dipl.project.loyaltyperks.data.UserInfoData
 
 class UserRepository {
@@ -31,6 +32,8 @@ class UserRepository {
                 callback.invoke(it.getValue(String::class.java))
             }
     }
+
+
 
 
 

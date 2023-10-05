@@ -6,5 +6,6 @@ object Constants {
     const val RC_SIGN_IN = 9001
     const val ISSUER_ID = "3388000000022260768"
     const val REQUEST_WALLET = 12345
+    const val ISSUER_ACC = "loyalty-perks@loyaltyperks.iam.gserviceaccount.com"
 
 }

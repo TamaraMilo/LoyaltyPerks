@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import dipl.project.loyaltyperks.R
 import dipl.project.loyaltyperks.data.CardData
@@ -23,6 +24,11 @@ class GridViewAdapter(var context: Context, var arrayList: ArrayList<CardData>) 
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         var view: View = View.inflate(context, R.layout.grid_item_list, null)
+
+        view.setOnClickListener {
+            Toast.makeText(context, "hoce" , Toast.LENGTH_SHORT).show()
+        }
+
         Glide.with(context)
             .load(arrayList[p0].image)
             .fitCenter()

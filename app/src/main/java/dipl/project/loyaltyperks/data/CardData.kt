@@ -1,3 +1,7 @@
 package dipl.project.loyaltyperks.data
 
-data class CardData(var id:String, var image: String = "")
+data class CardData(var objectId:String = "",
+                    var image: String = "",
+                    var loyaltyProgramName:String = "",
+                    var color:String = ""
+                    )

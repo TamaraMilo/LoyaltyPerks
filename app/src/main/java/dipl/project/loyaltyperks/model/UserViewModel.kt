@@ -1,6 +1,7 @@
 package dipl.project.loyaltyperks.model
 
 import androidx.lifecycle.ViewModel
+import dipl.project.loyaltyperks.data.CardData
 import dipl.project.loyaltyperks.data.SignInfoData
 import dipl.project.loyaltyperks.data.UserInfoData
 import dipl.project.loyaltyperks.data.enum.Roles
@@ -63,7 +64,7 @@ class UserViewModel : ViewModel() {
         authRepository.getSignedInUserId {
             it?.let { itId ->
                 authRepository.getSignInUserMail { itMail ->
-                    itMail?.let {mail->
+                    itMail?.let { mail ->
                         userInfoData.id = itId
                         userInfoData.email = mail
                         userRepository.setUserInfo(userInfoData) { itRes ->
@@ -85,6 +86,7 @@ class UserViewModel : ViewModel() {
             }
         }
     }
+
     fun getUserDisplayName(callback: (String?) -> Unit) {
         authRepository.getCurrentUserDefaultName {
             callback.invoke(it)
@@ -94,7 +96,7 @@ class UserViewModel : ViewModel() {
 
     fun userRole(userId: String, callback: (Roles?) -> Unit) {
         userRepository.userRole(userId) {
-            if(it!=null) {
+            if (it != null) {
                 callback.invoke(Roles.valueOf(it.uppercase()))
             } else {
                 callback.invoke(null)
@@ -103,3 +105,4 @@ class UserViewModel : ViewModel() {
         }
     }
 }
+

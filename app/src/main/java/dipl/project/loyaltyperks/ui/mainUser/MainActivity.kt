@@ -7,6 +7,7 @@ import android.content.pm.ResolveInfo
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.pay.Pay
 import com.google.android.gms.pay.PayClient
@@ -14,6 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import dipl.project.loyaltyperks.R
 import dipl.project.loyaltyperks.databinding.ActivityMainBinding
 import dipl.project.loyaltyperks.ui.mainUser.adapters.ViewPageAdapter
+import dipl.project.loyaltyperks.utils.Constants
 
 class MainActivity : AppCompatActivity() {
 
@@ -69,5 +71,33 @@ class MainActivity : AppCompatActivity() {
             return false
         }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == Constants.REQUEST_WALLET) {
+            when (resultCode) {
+                RESULT_OK -> {
+                    // Pass saved successfully
+                    Log.d("TAG_ERROR", "Added???")
+                }
+
+                RESULT_CANCELED -> {
+                    // Save operation canceled
+                    Log.d("TAG_ERROR", "Canceled???")
+                }
+
+                PayClient.SavePassesResult.SAVE_ERROR -> data?.let { intentData ->
+                    val errorMessage = intentData.getStringExtra(PayClient.EXTRA_API_ERROR_MESSAGE)
+                    errorMessage?.let { Log.d("TAG_ERROR", it) }
+                }
+
+                else -> {
+                    // Handle unexpected (non-API) exception
+                    Log.d("TAG_ERROR", "Something else")
+                }
+            }
+        }
     }
 }

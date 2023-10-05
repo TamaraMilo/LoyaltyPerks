@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1da4183a-df62-465f-8f35-9fad515a8410" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../model/CardViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../repos/CardRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Balance.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoyaltyObject.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LoyaltyPoints.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Payload.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PayloadResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../assets/payload.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../assets/payload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/CardData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/CardData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/payloadData.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../di/modules/ViewModelModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../di/modules/ViewModelModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/UserViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../model/UserViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../repos/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../repos/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/mainUser/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/mainUser/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/mainUser/MyCardsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/mainUser/MyCardsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/mainUser/ScannedCardFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/mainUser/ScannedCardFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/mainUser/adapters/GridViewAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/mainUser/adapters/GridViewAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../res/layout/fragment_scanned_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../res/layout/fragment_scanned_card.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../res/values/strings.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2WM6v8ZTyBefKdwzVFJ1dlFITWh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1da4183a-df62-465f-8f35-9fad515a8410" name="Changes" comment="" />
+      <created>1696530335551</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696530335551</updated>
+      <workItem from="1696530341660" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

@@ -1,10 +1,7 @@
 package dipl.project.loyaltyperks.repos
 
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.getValue
-import dipl.project.loyaltyperks.data.CardData
-import dipl.project.loyaltyperks.data.UserInfoData
+import dipl.project.loyaltyperks.model.UserInfoData
 
 class UserRepository {
 
@@ -26,12 +23,7 @@ class UserRepository {
                 callback.invoke(it.message)
             }
     }
-    fun userRole(userId: String, callback: (String?) -> Unit) {
-        database.child("user").child(userId).child("role").get()
-            .addOnSuccessListener {
-                callback.invoke(it.getValue(String::class.java))
-            }
-    }
+
 
 
 

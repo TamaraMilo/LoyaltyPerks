@@ -36,5 +36,6 @@
     <string name="add_customer">Add customer</string>
     <string name="points">Points:</string>
     <string name="add">Add</string>
-    <string name="input">Import</string>
+    <string name="input">Import into\ngoogle wallet</string>
+    <string name="logout">Logout</string>
 </resources>

@@ -1,7 +1,7 @@
 package dipl.project.loyaltyperks.di.modules
 
-import dipl.project.loyaltyperks.model.CardViewModel
-import dipl.project.loyaltyperks.model.UserViewModel
+import dipl.project.loyaltyperks.viewmodel.CardViewModel
+import dipl.project.loyaltyperks.viewmodel.UserViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

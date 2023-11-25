@@ -1,7 +1,7 @@
 package dipl.project.loyaltyperks.repos
 
 import com.google.firebase.database.FirebaseDatabase
-import dipl.project.loyaltyperks.data.CardData
+import dipl.project.loyaltyperks.model.CardData
 
 class CardRepository {
 

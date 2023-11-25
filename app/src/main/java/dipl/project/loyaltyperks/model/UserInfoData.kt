@@ -1,4 +1,4 @@
-package dipl.project.loyaltyperks.data
+package dipl.project.loyaltyperks.model
 
 data class UserInfoData(
     var id: String = "",

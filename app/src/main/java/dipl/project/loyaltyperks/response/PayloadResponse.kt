@@ -18,5 +18,3 @@ data class PayloadResponse(
     val payload: Payload?
 
 )
-
-//val stringForWallet = Gson().toJson(response)

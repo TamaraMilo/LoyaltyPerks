@@ -1,4 +1,4 @@
-package dipl.project.loyaltyperks.ui.mainManager
+package dipl.project.loyaltyperks.ui.main
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -15,31 +15,35 @@ import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.google.android.gms.pay.Pay
+import com.google.android.gms.pay.PayApiAvailabilityStatus
+import com.google.android.gms.pay.PayClient
 import dipl.project.loyaltyperks.R
-import dipl.project.loyaltyperks.databinding.FragmentScanCustomerBinding
-import dipl.project.loyaltyperks.utils.Constants
+import dipl.project.loyaltyperks.databinding.FragmentScannUserBinding
 import dipl.project.loyaltyperks.utils.Constants.REQUEST_CAMERA_CODE
 
 
-class ScanCustomerFragment : Fragment() {
+class ScanUserFragment : Fragment() {
 
-
-    private lateinit var binding:FragmentScanCustomerBinding
+    private lateinit var binding: FragmentScannUserBinding
 
     private lateinit var codeScanner: CodeScanner
 
+
+
+
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentScanCustomerBinding.inflate(inflater, container, false)
+
+        binding = FragmentScannUserBinding.inflate(inflater, container, false)
         if (ContextCompat.checkSelfPermission(
-                this.context!!, Manifest.permission.CAMERA
+                this.requireContext(), Manifest.permission.CAMERA
             ) == PackageManager.PERMISSION_DENIED
         ) {
             ActivityCompat.requestPermissions(
-                this.requireActivity(), arrayOf(Manifest.permission.CAMERA),
-                Constants.REQUEST_CAMERA_CODE
+                this.requireActivity(), arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_CODE
             )
         } else {
             startScanning()
@@ -47,10 +51,11 @@ class ScanCustomerFragment : Fragment() {
 
 
         return binding.root
-
     }
+
+
     private fun startScanning() {
-        codeScanner = CodeScanner(this.context!!, binding.scannerView)
+        codeScanner = CodeScanner(this.requireContext(), binding.scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK
         codeScanner.formats = CodeScanner.ALL_FORMATS
 
@@ -59,10 +64,16 @@ class ScanCustomerFragment : Fragment() {
         codeScanner.isAutoFocusEnabled = true
         codeScanner.isFlashEnabled = false
 
+
         codeScanner.decodeCallback = DecodeCallback {
             activity?.runOnUiThread {
                 Toast.makeText(this.context, "Scanned: $it", Toast.LENGTH_SHORT).show()
             }
+
+
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.scanUserFragment, ScannedCardFragment(it.text))
+            transaction?.commit()
         }
 
         codeScanner.errorCallback = ErrorCallback {
@@ -93,6 +104,7 @@ class ScanCustomerFragment : Fragment() {
         }
     }
 
+
     override fun onResume() {
         super.onResume()
         if (::codeScanner.isInitialized) {
@@ -106,5 +118,6 @@ class ScanCustomerFragment : Fragment() {
             codeScanner.releaseResources()
         }
     }
+
 
 }

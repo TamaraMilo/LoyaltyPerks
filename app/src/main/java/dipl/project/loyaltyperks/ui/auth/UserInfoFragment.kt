@@ -8,11 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import dipl.project.loyaltyperks.data.UserInfoData
-import dipl.project.loyaltyperks.data.enum.Roles
+import dipl.project.loyaltyperks.model.UserInfoData
 import dipl.project.loyaltyperks.databinding.FragmentUserInfoBinding
-import dipl.project.loyaltyperks.model.UserViewModel
-import dipl.project.loyaltyperks.ui.mainUser.MainActivity
+import dipl.project.loyaltyperks.viewmodel.UserViewModel
+import dipl.project.loyaltyperks.ui.main.MainActivity
 import org.koin.android.ext.android.inject
 
 
@@ -44,7 +43,7 @@ class UserInfoFragment : Fragment() {
             val dateOfBirth = binding.etDateOfBirth.text.toString()
 
             if (fullName.isNotEmpty() && address.isNotEmpty() && dateOfBirth.isNotEmpty()) {
-                val user = UserInfoData("", "", fullName, dateOfBirth, address, Roles.USER.toString().lowercase())
+                val user = UserInfoData("", "", fullName, dateOfBirth, address, "user")
                 userViewModel.setUserData(user) {
                     if (it == null) {
                         Toast.makeText(

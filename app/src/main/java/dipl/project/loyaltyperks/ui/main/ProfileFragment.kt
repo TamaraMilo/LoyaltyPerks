@@ -1,5 +1,6 @@
-package dipl.project.loyaltyperks.ui.mainUser
+package dipl.project.loyaltyperks.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import dipl.project.loyaltyperks.databinding.FragmentProfileBinding
-import dipl.project.loyaltyperks.model.UserViewModel
+import dipl.project.loyaltyperks.ui.auth.AuthActivity
+import dipl.project.loyaltyperks.ui.auth.IntroFragment
+import dipl.project.loyaltyperks.viewmodel.UserViewModel
 import org.koin.android.ext.android.inject
 
 
@@ -35,6 +38,13 @@ class ProfileFragment : Fragment() {
                 Toast.makeText(this.context, "Error retrieving user data!", Toast.LENGTH_SHORT)
                     .show()
             }
+        }
+
+        binding.bLogOut.setOnClickListener {
+            userViewModel.signOutUser()
+            var intent = Intent(activity, AuthActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
 
 

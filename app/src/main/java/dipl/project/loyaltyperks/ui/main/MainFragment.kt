@@ -1,4 +1,4 @@
-package dipl.project.loyaltyperks.ui.mainUser
+package dipl.project.loyaltyperks.ui.main
 
 import androidx.fragment.app.Fragment
 import dipl.project.loyaltyperks.databinding.FragmentMainBinding

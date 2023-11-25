@@ -1,7 +1,7 @@
-package dipl.project.loyaltyperks.model
+package dipl.project.loyaltyperks.viewmodel
 
 import androidx.lifecycle.ViewModel
-import dipl.project.loyaltyperks.data.CardData
+import dipl.project.loyaltyperks.model.CardData
 import dipl.project.loyaltyperks.repos.AuthRepository
 import dipl.project.loyaltyperks.repos.CardRepository
 

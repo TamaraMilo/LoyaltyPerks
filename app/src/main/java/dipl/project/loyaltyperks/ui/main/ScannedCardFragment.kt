@@ -1,29 +1,23 @@
-package dipl.project.loyaltyperks.ui.mainUser
+package dipl.project.loyaltyperks.ui.main
 
 import android.app.Activity.RESULT_CANCELED
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.Glide
 import com.google.android.gms.pay.Pay
 import com.google.android.gms.pay.PayApiAvailabilityStatus
 import com.google.android.gms.pay.PayClient
-import com.google.android.gms.wallet.Wallet
-import com.google.android.gms.wallet.WalletObjectsClient
 import com.google.gson.Gson
-import dipl.project.loyaltyperks.R
-import dipl.project.loyaltyperks.data.CardData
-import dipl.project.loyaltyperks.data.QRCodeData
+import dipl.project.loyaltyperks.model.CardData
+import dipl.project.loyaltyperks.model.QRCodeData
 import dipl.project.loyaltyperks.databinding.FragmentScannedCardBinding
-import dipl.project.loyaltyperks.model.CardViewModel
+import dipl.project.loyaltyperks.viewmodel.CardViewModel
 import dipl.project.loyaltyperks.response.*
 import dipl.project.loyaltyperks.utils.Constants.ISSUER_ACC
 import dipl.project.loyaltyperks.utils.Constants.ISSUER_ID
@@ -36,8 +30,10 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
 
 
     private lateinit var binding: FragmentScannedCardBinding
+
     private lateinit var walletClient: PayClient
     private val cardViewModel:CardViewModel by inject()
+
     private lateinit var loyaltyClassId:String
     private val passId = UUID.randomUUID().toString()
 
@@ -51,52 +47,25 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
 
         var obj = Gson().fromJson(data, QRCodeData::class.java)
 
-
-        walletClient = Pay.getClient(this.context!!)
-
+        walletClient = Pay.getClient(this.requireContext())
 
         fetchCanUseGoogleWalletApi()
+
         loyaltyClassId = obj.loyaltyClass
         binding.tvProgramName.text = obj.programName
-
-        Log.d("TAG_DATA","novo"+loyaltyClassId)
+        binding.tvStoreName.text = obj.storeName
 
         binding.bAddCard.setOnClickListener {
-            val card= CardData(passId)
+            var uuid = UUID.randomUUID().toString()
+
+            val card= CardData(uuid)
             card.image = obj.imageUrl
             card.loyaltyProgramName = obj.programName
             card.color = obj.cardColor
+            card.storeName = obj.storeName
 
             cardViewModel.addCardForUser(card) {
-                if(it==null) {val objectNeki = """
-{
-  "aud": "google",
-   "origins": [ "http://localhost:3000/Manager"],
-  "iss": "loyalty-perks@loyaltyperks.iam.gserviceaccount.com",
-  "iat": ${Date().time / 1000L},
-  "typ": "savetowallet",
-  "payload": {
-    "loyaltyObjects": [
-{
-        "id": "3388000000022260768.nekiPonovo",
-        "loyaltyPoints": {
-          "balance": {
-            "string": "300"
-          },
-          "label": "Points"
-        },
-        "classId": "3388000000022260768.probaMolimTe",
-        "state": "active"
-      }
-    ]
-  }
-}
-
-
-
-      """
-                    //var uuid = UUID.randomUUID().toString()
-                    var uuid = "nesto"
+                if(it==null) {
                     var balance = Balance(string = obj.balance.toString())
                     var loyaltyPoints = LoyaltyPoints(balance = balance, label = "Points")
                     var barcode = Barcode(alternateText = uuid,type="qrCode",value = uuid)
@@ -111,7 +80,7 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
                     var payload = Payload(loyaltyObjects = listOf(loyaltyObject))
                     var payloadResponse = PayloadResponse(
                         aud = "google",
-                        origins= listOf("http://localhost:3000/Manager"),
+                        origins= listOf(),
                         iss =ISSUER_ACC,
                         iat = Date().time / 1000L,
                         typ = "savetowallet",
@@ -119,9 +88,8 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
                     )
                     val stringForWallet = Gson().toJson(payloadResponse)
 
-
-
                     walletClient.savePasses(stringForWallet, requireActivity(), REQUEST_WALLET)
+
                 } else {
                     Toast.makeText(this.context, it, Toast.LENGTH_SHORT).show()
                 }
@@ -129,9 +97,6 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
         }
 
 
-
-
-        binding.root.setBackgroundColor(Color.parseColor(obj.cardColor))
         return binding.root
     }
 
@@ -140,14 +105,13 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
             .getPayApiAvailabilityStatus(PayClient.RequestType.SAVE_PASSES)
             .addOnSuccessListener { status ->
                 if (status == PayApiAvailabilityStatus.AVAILABLE) {
-                    Toast.makeText(this.context, "Moze", Toast.LENGTH_SHORT).show()
-                    Log.d("TAG_ERROR", "MOZE")
+                    Toast.makeText(this.context, "Your device is eligible for using the Pay API services", Toast.LENGTH_SHORT).show()
                 } else {
-                    // The user or device is not eligible for using the Pay API
+                    Toast.makeText(this.context, "Your device is not eligible for using the Pay API services", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener {
-                // Hide the button and optionally show an error message
+                    Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -178,37 +142,6 @@ class ScannedCardFragment(var data: String) : DialogFragment() {
             }
         }
     }
-
-
-    //private val passClassId = "$ISSUER_ID.$loyaltyClassId"
-//    private val objectId = "$ISSUER_ID.$passId"
-//    private val objectNew = """
-//{
-//  "aud": "google",
-//  "origins": [ ],
-//  "iss": "loyalty-perks@loyaltyperks.iam.gserviceaccount.com",
-//  "iat": ${Date().time / 1000L},
-//  "typ": "savetowallet",
-//  "payload": {
-//    "loyaltyObjects": [
-//{
-//        "id": "$objectId",
-//        "loyaltyPoints": {
-//          "balance": {
-//            "string": "300"
-//          },
-//          "label": "Points"
-//        },
-//        "classId": "$passClassId",
-//        "state": "active"
-//      }
-//    ]
-//  }
-//}
-//
-//
-//
-//      """
 
 
 }

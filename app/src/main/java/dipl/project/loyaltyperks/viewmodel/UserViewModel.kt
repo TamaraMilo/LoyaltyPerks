@@ -1,10 +1,11 @@
-package dipl.project.loyaltyperks.model
+package dipl.project.loyaltyperks.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dipl.project.loyaltyperks.data.CardData
-import dipl.project.loyaltyperks.data.SignInfoData
-import dipl.project.loyaltyperks.data.UserInfoData
-import dipl.project.loyaltyperks.data.enum.Roles
+import com.google.firebase.auth.UserInfo
+import dipl.project.loyaltyperks.model.SignInfoData
+import dipl.project.loyaltyperks.model.UserInfoData
 import dipl.project.loyaltyperks.repos.AuthRepository
 import dipl.project.loyaltyperks.repos.UserRepository
 
@@ -13,6 +14,8 @@ class UserViewModel : ViewModel() {
 
     private val authRepository: AuthRepository = AuthRepository()
     private val userRepository: UserRepository = UserRepository()
+
+    var user: MutableLiveData<UserInfoData> = MutableLiveData()
 
     fun signInUser(signInData: SignInfoData, callback: (String?) -> Unit) {
         if (signInData.email.isNotEmpty() && signInData.password.isNotEmpty()) {
@@ -39,6 +42,7 @@ class UserViewModel : ViewModel() {
                     } else {
                         callback.invoke(null)
                     }
+                    user.value = null
                 }
             } else {
                 callback.invoke("Passwords are not matching!")
@@ -93,16 +97,9 @@ class UserViewModel : ViewModel() {
         }
     }
 
-
-    fun userRole(userId: String, callback: (Roles?) -> Unit) {
-        userRepository.userRole(userId) {
-            if (it != null) {
-                callback.invoke(Roles.valueOf(it.uppercase()))
-            } else {
-                callback.invoke(null)
-            }
-
-        }
+    fun signOutUser() {
+        authRepository.signOut()
     }
+
 }
 

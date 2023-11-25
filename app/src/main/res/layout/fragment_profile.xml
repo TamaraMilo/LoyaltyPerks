@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darker_white"
-    tools:context=".ui.mainUser.ProfileFragment">
+    tools:context=".ui.main.ProfileFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBarProfile"
@@ -163,5 +163,15 @@
 
     </LinearLayout>
 
+    <android.widget.Button
+        android:id="@+id/bLogOut"
+        style="@style/transparent_button"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@color/white"
+        android:text="@string/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linProfileInfo"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

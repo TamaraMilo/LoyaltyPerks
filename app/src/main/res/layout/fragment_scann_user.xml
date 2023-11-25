@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/scanUserFragment"
-    tools:context=".ui.mainUser.ScanUserFragment">
+    tools:context=".ui.main.ScanUserFragment">
 
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/scannerView"

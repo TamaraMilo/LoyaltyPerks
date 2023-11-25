@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/myCardsFragmentLayout"
-    tools:context=".ui.mainUser.MyCardsFragment">
+    tools:context=".ui.main.MyCardsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarMyCards"
@@ -40,17 +40,16 @@
         android:id="@+id/gridViewCards"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/darker_white"
         android:columnWidth="@dimen/_230sdp"
         android:horizontalSpacing="@dimen/_16sdp"
         android:numColumns="2"
         android:verticalSpacing="@dimen/_16sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarMyCards"
-        app:layout_constraintVertical_bias=".0" />
+        app:layout_constraintVertical_bias=".0"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

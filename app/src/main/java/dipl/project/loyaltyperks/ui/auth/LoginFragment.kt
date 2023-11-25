@@ -9,16 +9,16 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dipl.project.loyaltyperks.R
-import dipl.project.loyaltyperks.data.SignInfoData
+import dipl.project.loyaltyperks.model.SignInfoData
 import dipl.project.loyaltyperks.databinding.FragmentLoginBinding
-import dipl.project.loyaltyperks.model.UserViewModel
+import dipl.project.loyaltyperks.viewmodel.UserViewModel
 import org.koin.android.ext.android.inject
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import dipl.project.loyaltyperks.ui.mainUser.MainActivity
+import dipl.project.loyaltyperks.ui.main.MainActivity
 
 class LoginFragment : Fragment() {
 

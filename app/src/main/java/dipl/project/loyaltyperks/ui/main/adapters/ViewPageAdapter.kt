@@ -1,11 +1,11 @@
-package dipl.project.loyaltyperks.ui.mainUser.adapters
+package dipl.project.loyaltyperks.ui.main.adapters
 
 import android.util.SparseArray
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import dipl.project.loyaltyperks.ui.mainUser.MyCardsFragment
-import dipl.project.loyaltyperks.ui.mainUser.ProfileFragment
+import dipl.project.loyaltyperks.ui.main.MyCardsFragment
+import dipl.project.loyaltyperks.ui.main.ProfileFragment
 
 //class ViewPageAdapter(supportFragmentManager: FragmentManager ): FragmentPagerAdapter(supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 //

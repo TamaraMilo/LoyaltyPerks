@@ -15,8 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dipl.project.loyaltyperks.R
 import dipl.project.loyaltyperks.databinding.FragmentRegisterBinding
-import dipl.project.loyaltyperks.model.UserViewModel
-import dipl.project.loyaltyperks.ui.mainUser.MainActivity
+import dipl.project.loyaltyperks.viewmodel.UserViewModel
 import dipl.project.loyaltyperks.utils.Constants.RC_SIGN_IN
 import org.koin.android.ext.android.inject
 

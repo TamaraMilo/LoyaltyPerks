@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="dipl.project.loyaltyperks.ui.mainUser.MainFragment"
+        android:name="dipl.project.loyaltyperks.ui.main.MainFragment"
         android:label="Main Fragment"
         tools:layout="@layout/fragment_main">
 
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/ProfileFragment"
-        android:name="dipl.project.loyaltyperks.ui.mainUser.ProfileFragment"
+        android:name="dipl.project.loyaltyperks.ui.main.ProfileFragment"
         android:label="Profile Fragment"
         tools:layout="@layout/fragment_profile">
 
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/MyCardsFragment"
-        android:name="dipl.project.loyaltyperks.ui.mainUser.MyCardsFragment"
+        android:name="dipl.project.loyaltyperks.ui.main.MyCardsFragment"
         android:label="My cards Fragment"
         tools:layout="@layout/fragment_my_cards">
 

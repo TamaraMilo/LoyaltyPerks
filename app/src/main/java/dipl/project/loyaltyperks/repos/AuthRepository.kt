@@ -1,9 +1,8 @@
 package dipl.project.loyaltyperks.repos
 
 
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
-import dipl.project.loyaltyperks.data.SignInfoData
+import dipl.project.loyaltyperks.model.SignInfoData
 
 
 class AuthRepository {
@@ -43,6 +42,10 @@ class AuthRepository {
 
     fun getCurrentUserDefaultName(callback: (String?) -> Unit) {
         callback(auth.currentUser?.displayName)
+    }
+
+    fun signOut() {
+        auth.signOut()
     }
 
 
